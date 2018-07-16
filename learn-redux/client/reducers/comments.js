@@ -4,7 +4,7 @@
 // it applies the action and returns an updated copy of the store
 
 export default function comments (state = [], action) {
-    console.log(state, action);
+    console.log('comment reducer', state, action);
 
     return state;
 }
