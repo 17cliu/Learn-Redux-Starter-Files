@@ -10,7 +10,7 @@
 //  whether it needs to do anything for each action it handles.
 
 export default function posts (state = [], action) {
-    console.log('post reducer', state, action);
+    // console.log('post reducer', state, action);
 
     switch (action.type) {
         case 'INCREMENT_LIKES':
