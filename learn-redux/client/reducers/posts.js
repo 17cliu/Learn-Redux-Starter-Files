@@ -10,6 +10,7 @@
 //  whether it needs to do anything for each action it handles.
 
 export default function posts (state = [], action) {
+    // the state here is the list of posts.
     // console.log('post reducer', state, action);
 
     switch (action.type) {
