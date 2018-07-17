@@ -15,7 +15,13 @@ const defaultState = {
     comments
 };
 
-const store = createStore(rootReducer, defaultState);
+// add store enhancers. particularly we init the redux dev tool extension,
+// if it exists, which will allow us to inspect the store and time travel.
+const enhancers = compose(
+    window.devToolsExtension ? window.devToolsExtension() : (f) => f
+);
+
+const store = createStore(rootReducer, defaultState, enhancers);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
