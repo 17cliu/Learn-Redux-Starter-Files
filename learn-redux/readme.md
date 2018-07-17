@@ -1,12 +1,11 @@
 # Learn Redux
 
-A simple React + Redux implementation. This will be turned into a free video series once the app is totally fleshed out.
+Reduxstagram, a simple Instagram clone built with React + Redux, following Wes Bos' wonderful [Learn Redux](https://learnredux.com/) course.
 
-## Running
+## Quick Start
 
-First `npm install` to grab all the necessary dependencies. 
-
-Then run `npm start` and open <localhost:7770> in your browser.
+1. `npm install` to grab all necessary dependencies.
+2. `npm start` to compile & start application; site served at <localhost:7770>.
 
 ## Production Build
 
