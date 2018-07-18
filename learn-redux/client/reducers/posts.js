@@ -12,30 +12,33 @@
 export default function posts (state = [], action) {
     // the state here is the list of posts.
     // console.log('post reducer', state, action);
+    const postId = action.postId;
+    const postIdx = state.findIndex((post) => post.code === postId);
 
-    switch (action.type) {
-        case 'INCREMENT_LIKES':
-            const i = action.index;
+    if (postIdx > -1) {
+        switch (action.type) {
+            case 'INCREMENT_LIKES':
 
-            // process like and return updated state.
-            // make a copy of the existing state, make change on the copy,
-            // return changed copy.
-            return [
-                // get all posts before the one we're updating
-                ...state.slice(0, i),
-                // this is the post we're updating
-                {
-                    // get all the properties of this posts that didn't change
-                    ...state[i],
-                    // increment likes for this post
-                    likes: state[i].likes + 1
-                },
-                // get all posts after the one we're updating
-                ...state.slice(i + 1)
-            ];
-        default:
-            // didn't have to do anything for this action; return unchanged state.
-            return state;
+                // process like and return updated state.
+                // make a copy of the existing state, make change on the copy,
+                // return changed copy.
+                return [
+                    // get all posts before the one we're updating
+                    ...state.slice(0, postIdx),
+                    // this is the post we're updating
+                    {
+                        // get all the properties of this posts that didn't change
+                        ...state[postIdx],
+                        // increment likes for this post
+                        likes: state[postIdx].likes + 1
+                    },
+                    // get all posts after the one we're updating
+                    ...state.slice(postIdx + 1)
+                ];
+            default:
+                // didn't have to do anything for this action; return unchanged state.
+                return state;
+        }
     }
 
     return state;

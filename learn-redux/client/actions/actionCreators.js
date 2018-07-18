@@ -2,10 +2,10 @@
 
 // increment
 // add like for a given post
-export function increment (index) {
+export function increment (postId) {
     return {
         type: 'INCREMENT_LIKES',
-        index
+        postId
     };
 }
 
